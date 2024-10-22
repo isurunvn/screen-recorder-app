@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Screen Recorder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <select id="videoSelectBtn" class="button">
+                <option>Select a video source</option>
+            </select>
+            <button id="startBtn" class="button">Start Recording</button>
+            <button id="stopBtn" class="button" disabled>Stop Recording</button>
+        </div>
+        
+        <div class="preview">
+            <video id="preview" autoplay></video>
+        </div>
+        
+        <div class="editor hidden">
+            <video id="recorded" controls></video>
+            <div class="trim-controls">
+                <input type="range" id="trimStart" min="0" step="0.1">
+                <input type="range" id="trimEnd" min="0" step="0.1">
+                <button id="saveBtn" class="button">Save Video</button>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>
