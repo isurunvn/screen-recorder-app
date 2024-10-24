@@ -6,13 +6,25 @@
 </head>
 <body>
     <div class="container">
+        <div class="app-header">
+            <h1 class="app-title">Screen Recorder</h1>
+            <p>Capture, trim, and save your screen recordings</p>
+        </div>
+
         <div class="controls">
             <select id="videoSelectBtn" class="button">
                 <option value="">Select a video source</option>
             </select>
+            <select id="formatSelect" class="button">
+                <!-- Options will be populated dynamically -->
+            </select>
+            <select id="qualitySelect" class="button">
+                <option value="high">High Quality</option>
+                <option value="medium" selected>Medium Quality</option>
+                <option value="low">Low Quality</option>
+            </select>
             <button id="startBtn" class="button" disabled>Start Recording</button>
             <button id="stopBtn" class="button" disabled>Stop Recording</button>
-            <div id="recordingTimer" class="hidden">00:00</div>
         </div>
         
         <div class="preview">
@@ -28,6 +40,7 @@
             </div>
         </div>
     </div>
+    <div id="recordingTimer" class="hidden">00:00</div>
     <script src="renderer.js"></script>
 </body>
 </html>

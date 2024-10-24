@@ -6,8 +6,8 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: 1000,
+    height: 760,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -44,13 +44,13 @@ ipcMain.handle('get-sources', async () => {
   }
 });
 
-ipcMain.handle('save-dialog', async () => {
+ipcMain.handle('save-dialog', async (event, extension) => {
   try {
     const { filePath } = await dialog.showSaveDialog({
       buttonLabel: 'Save video',
-      defaultPath: `vid-${Date.now()}.webm`,
+      defaultPath: `vid-${Date.now()}.${extension}`,
       filters: [
-        { name: 'WebM files', extensions: ['webm'] }
+        { name: `${extension.toUpperCase()} files`, extensions: [extension] }
       ]
     });
     return filePath;
