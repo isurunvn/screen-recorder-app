@@ -8,14 +8,14 @@
     <div class="container">
         <div class="controls">
             <select id="videoSelectBtn" class="button">
-                <option>Select a video source</option>
+                <option value="">Select a video source</option>
             </select>
-            <button id="startBtn" class="button">Start Recording</button>
+            <button id="startBtn" class="button" disabled>Start Recording</button>
             <button id="stopBtn" class="button" disabled>Stop Recording</button>
         </div>
         
         <div class="preview">
-            <video id="preview" autoplay></video>
+            <video id="preview" autoplay muted></video>
         </div>
         
         <div class="editor hidden">
