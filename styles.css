@@ -43,7 +43,7 @@ body {
 }
 
 .button, select {
-    padding: 10px 16px;
+    padding: 10px 12px;
     background: #2196F3;
     color: white;
     border: none;
